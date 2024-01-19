@@ -34,7 +34,9 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, class_):
-        """Creates a new instance of a given class and saves it to a given class"""
+        """
+        Creates a new instance of a given class and saves it to a given class
+        """
         supported_classes = ["BaseModel"]
         if not class_:
             print("** class name missing **")
@@ -48,7 +50,10 @@ class HBNBCommand(cmd.Cmd):
                 json.dump(inst_dict, data_file, indent=4)
 
     def do_show(self, args):
-        """Prints the string representation of an instance based on the class name and id"""
+        """
+        Prints the string representation of an instance
+        based on the class name and id
+        """
         class_ = None
         id_num = None
         for n in range(len(args.split())):
@@ -71,8 +76,13 @@ class HBNBCommand(cmd.Cmd):
             if inst_data["id"] != id_num:
                 print("** no instance found **")
             else:
-                instance = BaseModel(id=inst_data["id"], created_at=inst_data["created_at"], updated_at=inst_data["updated_at"])
+                instance = BaseModel(
+                        id=inst_data["id"],
+                        created_at=inst_data["created_at"],
+                        updated_at=inst_data["updated_at"]
+                        )
                 print(str(instance))
+
 
 if __name__ == '__main__':
     try:
