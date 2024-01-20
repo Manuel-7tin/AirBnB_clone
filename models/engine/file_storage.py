@@ -20,6 +20,7 @@ class FileStorage:
 
     def new(self, obj):
         """Adds a new object to the __object dictionary"""
+        print(f"{obj.__class__.__name__}")
         FileStorage.__objects[f"{obj.__class__.__name__}.{obj.id}"] = str(obj)
 
 

@@ -1,0 +1,4 @@
+{
+    "BaseModel.d66dc7e4-dee2-4e27-bcd6-e5f39b2b903b": "[BaseModel] (d66dc7e4-dee2-4e27-bcd6-e5f39b2b903b) {'id': 'd66dc7e4-dee2-4e27-bcd6-e5f39b2b903b', 'created_at': datetime.datetime(2024, 1, 20, 6, 33, 36, 800567), 'updated_at': datetime.datetime(2024, 1, 20, 6, 33, 36, 800567)}",
+    "BaseModel.02f2b859-7b23-48ca-88e8-65aa6b9646f8": "[BaseModel] (02f2b859-7b23-48ca-88e8-65aa6b9646f8) {'id': '02f2b859-7b23-48ca-88e8-65aa6b9646f8', 'created_at': datetime.datetime(2024, 1, 20, 6, 34, 2, 903860), 'updated_at': datetime.datetime(2024, 1, 20, 6, 34, 2, 903860)}"
+}
