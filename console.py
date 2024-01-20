@@ -29,9 +29,9 @@ class HBNBCommand(cmd.Cmd):
         else:
             self.stdout.write('*** Unknown syntax: %s\n' % line)
 
-    def emptyline(self):
-        """Handle empty line"""
-        pass
+#    def emptyline(self):
+#        """Handle empty line"""
+#        pass
 
     def do_create(self, class_):
         """
