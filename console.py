@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from models import storage
 
 """Interactive shell for Airbnb project."""
 
@@ -34,23 +33,14 @@ class HBNBCommand(cmd.Cmd):
         """Handle empty line"""
         pass
 
-    def do_all(self, class_):
-        if not class_:
-            pass
-        elif class_ not in HBNBCommand.supported_classes:
-            print("** class doesn't exist **")
-        else:
-            instances = storage.all()
-            for instance in instances:
-                print(instance)
-
     def do_create(self, class_):
         """
         Creates a new instance of a given class and saves it to a given class
         """
+        supported_classes = ["BaseModel"]
         if not class_:
             print("** class name missing **")
-        elif class_ not in HBNBCommand.supported_classes:
+        elif class_ not in supported_classes:
             print("** class doesn't exist **")
         else:
             instance = BaseModel()
@@ -73,9 +63,10 @@ class HBNBCommand(cmd.Cmd):
                 class_ = args.split()[n]
             elif n == 1:
                 id_num = args.split()[n]
+        supported_classes = ["BaseModel"]
         if not class_:
             print("** class name missing **")
-        elif class_ not in HBNBCommand.supported_classes:
+        elif class_ not in supported_classes:
             print("** class doesn't exist **")
         elif not id_num:
             print("** instance id missing **")
