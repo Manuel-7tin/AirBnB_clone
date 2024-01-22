@@ -26,23 +26,23 @@ def parse_args(lmt, arg_string):
     cert_attr_list = []
 
     for n in range(len(arg_string.split())):
-        if n > caution:
+        if n > lmt:
             break
         attr_list[n] = arg_string.split()[n]
     if not attr_list[0]:
         print("** class name missing **")
     elif attr_list[0] not in supported_classes:
         print("** class doesn't exist **")
-    elif not attr_list[1] and caution >= 2:
+    elif not attr_list[1] and lmt >= 2:
         print("** instance id missing **")
         total = 1
-    elif data_dict.get(f"BaseModel.{attr_list[1]}") is None and caution >= 2:
+    elif data_dict.get(f"BaseModel.{attr_list[1]}") is None and lmt >= 2:
         print("** no instance found **")
         total = 1
-    elif not attr_list[2] and caution >= 3:
+    elif not attr_list[2] and lmt >= 3:
         print("** attribute name missing **")
         total = 2
-    elif not attr_list[3] and caution >= 4:
+    elif not attr_list[3] and lmt >= 4:
         print("** value missing **")
         total = 3
     else:
@@ -136,4 +136,7 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == '__main__':
-    HBNBCommand().cmdloop()
+    try:
+        HBNBCommand().cmdloop()
+    except KeyboardInterrupt:
+        print("\nExiting...")
