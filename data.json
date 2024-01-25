@@ -1,0 +1,5 @@
+{
+    "User.c3bdc085-1a93-4fcc-8e27-7b4c54cb32fe": "[User] (c3bdc085-1a93-4fcc-8e27-7b4c54cb32fe) {'id': 'c3bdc085-1a93-4fcc-8e27-7b4c54cb32fe', 'created_at': datetime.datetime(2024, 1, 24, 23, 19, 18, 704944), 'updated_at': datetime.datetime(2024, 1, 24, 23, 19, 18, 704991), 'first_name': 'Betty', 'last_name': 'Bar', 'email': 'airbnb@mail.com', 'password': 'root'}",
+    "User.801d1fc4-698d-4bb5-a165-a7106d64c061": "[User] (801d1fc4-698d-4bb5-a165-a7106d64c061) {'id': '801d1fc4-698d-4bb5-a165-a7106d64c061', 'created_at': datetime.datetime(2024, 1, 24, 23, 19, 18, 707404), 'updated_at': datetime.datetime(2024, 1, 24, 23, 19, 18, 707430), 'first_name': 'John', 'email': 'airbnb2@mail.com', 'password': 'root'}",
+    "BaseModel.a7600842-11a6-44cb-ab90-56b818a458eb": "[BaseModel] (a7600842-11a6-44cb-ab90-56b818a458eb) {'id': 'a7600842-11a6-44cb-ab90-56b818a458eb', 'created_at': datetime.datetime(2024, 1, 25, 2, 2, 23, 509936), 'updated_at': datetime.datetime(2024, 1, 25, 2, 2, 23, 509936)}"
+}

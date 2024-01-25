@@ -7,6 +7,7 @@ import cmd
 import sys
 from datetime import datetime
 from models.base_model import BaseModel
+from models.user import User
 from models import storage
 
 data_dict = storage.all()
@@ -20,7 +21,7 @@ def parse_args(lmt, arg_string):
         return (0, ())
 
     total = 0
-    supported_classes = ["BaseModel"]
+    supported_classes = ["BaseModel", "User"]
     class_name, id_num, attr_name, attr_value = None, None, None, None
     attr_list = [class_name, id_num, attr_name, attr_value]
     cert_attr_list = []
@@ -54,6 +55,9 @@ class HBNBCommand(cmd.Cmd):
     """HBNBCommand class."""
 
     prompt = '(hbnb) '
+    get_class = {
+            "BaseModel": BaseModel,
+            "User": User,}
 
     def do_help(self, line):
         """Display help."""
@@ -78,8 +82,9 @@ class HBNBCommand(cmd.Cmd):
         """
         Creates a new instance of a given class and saves it to a given class
         """
-        if parse_args(1, class_)[0] > 1:
-            instance = BaseModel()
+        args = parse_args(1, class_)
+        if args[0] > 1:
+            instance = HBNBCommand.get_class[args[1][0]]()
             print(instance.id)
             storage.save()
         else:

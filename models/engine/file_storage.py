@@ -9,6 +9,7 @@ class FileStorage:
 
     __file_path = "data.json"
     __objects = {}
+    __temp_obj = []
 
 
     def all(self):
@@ -20,11 +21,14 @@ class FileStorage:
 
     def new(self, obj):
         """Adds a new object to the __object dictionary"""
+        FileStorage.__temp_obj.append(obj)
         FileStorage.__objects[f"{obj.__class__.__name__}.{obj.id}"] = str(obj)
 
 
-    def save(obj):
+    def save(self):
         """Serializes the __objets dictionary into the json file"""
+        for obj in FileStorage.__temp_obj:
+            FileStorage.__objects[f"{obj.__class__.__name__}.{obj.id}"] = str(obj)
         try:
             with open(file=FileStorage.__file_path, mode="r") as json_file:
                 saved_data = json.load(json_file)
