@@ -37,7 +37,7 @@ def parse_args(lmt, arg_string):
     elif not attr_list[1] and lmt >= 2:
         print("** instance id missing **")
         total = 1
-    elif data_dict.get(f"BaseModel.{attr_list[1]}") is None and lmt >= 2:
+    elif data_dict.get(f"{attr_list[0]}.{attr_list[1]}") is None and lmt >= 2:
         print("** no instance found **")
         total = 1
     elif not attr_list[2] and lmt >= 3:
