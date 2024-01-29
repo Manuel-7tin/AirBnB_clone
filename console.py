@@ -9,6 +9,11 @@ from datetime import datetime
 from models.base_model import BaseModel
 from models.user import User
 from models import storage
+from models.place import Place
+from models.review import Review
+from models.state import State
+from models. city import City
+from models.amenity import Amenity
 
 data_dict = storage.all()
 
@@ -21,7 +26,7 @@ def parse_args(lmt, arg_string):
         return (0, ())
 
     total = 0
-    supported_classes = ["BaseModel", "User"]
+    supported_classes = ["BaseModel", "User", "Place", "State", "City", "Amenity", "Review"]
     class_name, id_num, attr_name, attr_value = None, None, None, None
     attr_list = [class_name, id_num, attr_name, attr_value]
     cert_attr_list = []
@@ -57,7 +62,12 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
     get_class = {
             "BaseModel": BaseModel,
-            "User": User,}
+            "User": User,
+            "Place": Place,
+            "State": State,
+            "City": City,
+            "Amenity": Amenity,
+            "Review": Review}
 
     def do_help(self, line):
         """Display help."""
